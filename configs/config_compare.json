@@ -1,0 +1,97 @@
+{
+	"inputs": [
+		["data", "data/data.yoda"],
+		["A14", "baseline/A14/submit/000000/combined_normalized.yoda"],
+		["Monash", "baseline/monash/submit/000000/combined_normalized.yoda"],
+		["CUETP8M1", "baseline/CUETP8M1/submit/000000/combined_normalized.yoda"]
+	],
+    "options": {
+        "output_dir": "data_baseline",
+        "logY": true,
+        "title": "$pp \\rightarrow Z + X$ 7 TeV",
+        "errorbars": false,
+		"ylabel": "Scalar pT sum density",
+		"ymin": 0.3,
+		"ymax": 9,
+        "d01-x01-y01": ["Toward region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d01-x01-y02": ["Transverse region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d01-x01-y03": ["Away region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d01-x01-y04": ["Trans-min region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d01-x01-y05": ["Trans-max region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d01-x01-y06": ["Trans-diff region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2\\sum p_{T} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y01": ["Toward region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y02": ["Transverse region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y03": ["Away region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y04": ["Trans-min region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y05": ["Trans-max region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d02-x01-y06": ["Trans-diff region, $p_{T}^Z$ [GeV]", true, "$\\langle{d}^2 N_{ch} / {d}\\eta{d}\\phi\\rangle$"],
+        "d03-x01-y01": ["Toward region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d03-x01-y02": ["Transverse region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d03-x01-y03": ["Away region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d03-x01-y04": ["Trans-min region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d03-x01-y05": ["Trans-max region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d03-x01-y06": ["Trans-diff region, $p_{T}^{Z}$ [GeV]", true,     	  "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d04-x01-y01": ["Toward region, $N_{ch}$", true, "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d04-x01-y02": ["Transverse region, $N_{ch}$", true, "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d04-x01-y03": ["Away region, $N_{ch}$", true, "$\\langle$ mean $p_{T}\\rangle$ [GeV]"],
+        "d05-x01-y01": ["Toward region, $p_{T}^Z < 5$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y01": ["Transverse region, $p_{T}^Z < 5$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y01": ["Trans-min region, $p_{T}^Z < 5$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y01": ["Trans-max region, $p_{T}^Z < 5$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d05-x01-y02": ["Toward region, 5 GeV $ < p_{T}^Z < 10$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y02": ["Transverse region, 5 GeV $ < p_{T}^Z < 10$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y02": ["Trans-min region, 5 GeV $ < p_{T}^Z < 10$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y02": ["Trans-max region, 5 GeV $ < p_{T}^Z < 10$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d05-x01-y03": ["Toward region, 10 GeV $ < p_{T}^Z < 20$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y03": ["Transverse region, 10 GeV $ < p_{T}^Z < 20$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y03": ["Trans-min region, 10 GeV $ < p_{T}^Z < 20$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y03": ["Trans-max region, 10 GeV $ < p_{T}^Z < 20$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d05-x01-y04": ["Toward region, 20 GeV $ < p_{T}^Z < 50$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y04": ["Transverse region, 20 GeV $ < p_{T}^Z < 50$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y04": ["Trans-min region, 20 GeV $ < p_{T}^Z < 50$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y04": ["Trans-max region, 20 GeV $ < p_{T}^Z < 50$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d05-x01-y05": ["Toward region, 50 GeV $ < p_{T}^Z < 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y05": ["Transverse region, 50 GeV $ < p_{T}^Z < 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y05": ["Trans-min region, 50 GeV $ < p_{T}^Z < 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y05": ["Trans-max region, 50 GeV $ < p_{T}^Z < 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d05-x01-y06": ["Toward region, $p_{T}^Z > 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x02-y06": ["Transverse region, $p_{T}^Z > 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x03-y06": ["Trans-min region, $p_{T}^Z > 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+        "d05-x04-y06": ["Trans-max region, $p_{T}^Z > 110$ GeV, $\\sum p_{T} / \\delta\\eta\\delta\\phi$ [GeV]", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}\\sum p_{T} / \\delta\\eta\\delta\\phi}$", true],
+
+        "d06-x01-y01": ["Toward region, $p_{T}^Z < 5$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y01": ["Transverse region, $p_{T}^Z < 5$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y01": ["Trans-min region, $p_{T}^Z < 5$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y01": ["Trans-max region, $p_{T}^Z < 5$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+
+        "d06-x01-y02": ["Toward region, 5 GeV $ < p_{T}^Z < 10$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y02": ["Transverse region, 5 GeV $ < p_{T}^Z < 10$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y02": ["Trans-min region, 5 GeV $ < p_{T}^Z < 10$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y02": ["Trans-max region, 5 GeV $ < p_{T}^Z < 10$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+
+        "d06-x01-y03": ["Toward region, 10 GeV $ < p_{T}^Z < 20$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y03": ["Transverse region, 10 GeV $ < p_{T}^Z < 20$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y03": ["Trans-min region, 10 GeV $ < p_{T}^Z < 20$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y03": ["Trans-max region, 10 GeV $ < p_{T}^Z < 20$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+
+        "d06-x01-y04": ["Toward region, 20 GeV $ < p_{T}^Z < 50$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y04": ["Transverse region, 20 GeV $ < p_{T}^Z < 50$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y04": ["Trans-min region, 20 GeV $ < p_{T}^Z < 50$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y04": ["Trans-max region, 20 GeV $ < p_{T}^Z < 50$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+
+        "d06-x01-y05": ["Toward region, 50 GeV $ < p_{T}^Z < 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y05": ["Transverse region, 50 GeV $ < p_{T}^Z < 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y05": ["Trans-min region, 50 GeV $ < p_{T}^Z < 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y05": ["Trans-max region, 50 GeV $ < p_{T}^Z < 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+
+        "d06-x01-y06": ["Toward region, $p_{T}^Z > 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x02-y06": ["Transverse region, $p_{T}^Z > 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x03-y06": ["Trans-min region, $p_{T}^Z > 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"],
+        "d06-x04-y06": ["Trans-max region, $p_{T}^Z > 110$ GeV, $N_{ch} / \\delta\\eta\\delta\\phi$", true, "$\\dfrac{1}{N_{ev}} \\dfrac{{d}N_{ev}}{{d}N_{ch} / \\delta\\eta\\delta\\phi}$"]
+	}
+}
