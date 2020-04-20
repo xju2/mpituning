@@ -18,6 +18,9 @@ setup(
     url="https://gitlab.cern.ch/xju/mpituning.git",
     packages=find_packages(),
     install_requires=[
+        'pandas',
+        'numpy',
+        'pyDOE',
     ],
     setup_requires=[],
     classifiers=[
@@ -27,5 +30,6 @@ setup(
         'scripts/change_yoda',
         'scripts/compare_yoda_files',
         'scripts/normalize_yoda',
+        'scripts/create_diy_configs',
     ],
 )

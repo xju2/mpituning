@@ -1,8 +1,8 @@
 #!/usr/bin/env python
+from __future__ import print_function
 
 # change format of HepData: ATLAS_2014_I1268975 to match those generated from Rivet
 
-from __future__ import print_function
 import yoda
 import sys
 import re
