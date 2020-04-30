@@ -8,7 +8,6 @@ import os
 import math
 import pandas as pd
 
-import yoda
 import pyDOE
 
 from mpituning.parameter import Parameter

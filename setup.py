@@ -12,7 +12,7 @@ setup(
     version="0.1.0",
     description=description,
     long_description=description,
-    author="HEPTrkx",
+    author="Xiangyang Ju",
     license="Apache License, Version 2.0",
     keywords=["generator tuning"],
     url="https://gitlab.cern.ch/xju/mpituning.git",
@@ -24,6 +24,7 @@ setup(
     ],
     setup_requires=[],
     classifiers=[
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3.7",
     ],
     scripts=[

@@ -6,16 +6,23 @@ from __future__ import print_function
 
 import yoda
 print("yoda version:", yoda.__version__)
+yoda_version = yoda.__version__
 
 import sys
 import os
+
+def versiontuple(v):
+    return tuple(map(int, (v.split('.'))))
 
 def get_sum(in_yoda):
     if type(in_yoda) == yoda.core.Profile1D:
         in_yoda = in_yoda.mkScatter()
 
     if type(in_yoda) == yoda.core.Scatter2D:
-        return sum([p.y*(p.xMax-p.xMin) for p in in_yoda.points])
+        if versiontuple(yoda_version) >= versiontuple('1.8.0'):
+            return sum([p.y*(p.xMax()-p.xMin()) for p in in_yoda.points()])
+        else:
+            return sum([p.y*(p.xMax-p.xMin) for p in in_yoda.points])
     else: ### yoda.core.Hist1D
         return float(in_yoda.sumW())
 

@@ -79,4 +79,4 @@ def compare_yoda_files(ref_file, tuned_dict_files, options=None):
     for key,value in tuned_dict_files.iteritems():
         tuned_dict[key] = yoda.read(value)
 
-    compare_yoda(ref_data, tuned_dict, options)
+    compare_yoda(ref_data, tuned_dict, options
