@@ -10,7 +10,7 @@ WeakBosonAndParton:qg2gmZq = on			! q g --> gamma/Z0 q
 
 Tune:ee = 7                         ! use Monash 2013 Tune by Peter Skands
 Tune:pp = 21                        ! use ATLAS A14 central tune with NNPDF2.3LO
-PDF:pSet = 13 						! NNPDF2.3 QCD+QED LO alpha_s(M_Z) = 0.130. Will be used everywhere 
+PDF:pSet = LHAPDF6:NNPDF23_lo_as_0130_qed/0  ! NNPDF2.3 QCD+QED LO alpha_s(M_Z) = 0.130. Will be used everywhere 
 
 UncertaintyBands:doVariations = on
 UncertaintyBands:List = {
@@ -18,7 +18,9 @@ UncertaintyBands:List = {
     MUR2_MUF_1 isr:muRfac = 2.0,
     PDF247001 isr:PDF:member = 247001,
     PDF247002 isr:PDF:member = 247002,
-    PDFup isr:PDF:plus = 247000,
-    PDFdown isr:PDF:minus = 24700,
-    PDFall isr:PDF:family = 24700,
+    PDFup isr:PDF:plus = 1.0,
+    PDFdn isr:PDF:minus = 1.0
+    #PDFup isr:PDF:plus = 247000,
+    #PDFdown isr:PDF:minus = 24700,
+    #PDFall isr:PDF:family = 24700,
 }
