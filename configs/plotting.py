@@ -8,30 +8,16 @@ import yoda
 import sys
 import numpy as np
 import matplotlib as mpl
-
-
-# TODO: Move to core objects
-#     def same_binning_as(self, other):
-#         if self.dim != other.dim:
-#             return False
-#         if not (other.x == self.x).all() and \
-#                (other.exminus == self.exminus).all() and \
-#                (other.explus == self.explus).all():
-#             return False
-#         if self.dim == 2:
-#             return True
-#         return (other.y == self.y).all() and \
-#                (other.eyminus == self.eyminus).all() and \
-#                (other.eyplus == self.eyplus).all()
-
+from collections import defaultdict
 
 def read_plot_keys(datfile):
     import re
-    re_begin = re.compile("#*\s*BEGIN\s+PLOT\s*(\w*)")
-    re_comment = re.compile("#.*")
-    re_attr = re.compile("(\w+)\s*=\s*(.*)")
-    re_end = re.compile("#*\s*END\s+PLOT\s+\w*")
-    plotkeys = {}
+    re_begin = re.compile(r"#*\s*BEGIN\s+PLOT\s*(.+)")
+    re_comment = re.compile(r"#.*")
+    re_attr = re.compile(r"(\w+)\s*=\s*(.*)")
+    re_end = re.compile(r"#*\s*END\s+PLOT\s+\w*")
+    plotkeys = defaultdict(dict)
+    global_configs = []
     with open(datfile) as f:
         inplot = False
         name = None
@@ -40,6 +26,8 @@ def read_plot_keys(datfile):
             if re_begin.match(l):
                 inplot = True
                 name = re_begin.match(l).group(1)
+                if '*' in name:
+                    global_configs.append(name)
             elif re_end.match(l):
                 inplot = False
                 name = None
@@ -48,7 +36,15 @@ def read_plot_keys(datfile):
             elif inplot:
                 m = re_attr.match(l)
                 if m is None: continue
-                plotkeys.setdefault(name, {})[m.group(1)] = m.group(2)
+                plotkeys[name][m.group(1)] = m.group(2)
+
+    # print("global configs:", global_configs)
+    for g_config in global_configs:
+        for name in plotkeys.keys():
+            if name in global_configs:
+                continue
+            else:
+                plotkeys[name].update(**plotkeys[g_config])
     return plotkeys
 
 
