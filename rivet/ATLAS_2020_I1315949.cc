@@ -69,11 +69,11 @@ namespace Rivet {
       char buffer[512];
       sprintf(buffer, "Analysis_%d.root", getpid());
       string out_filename(buffer);
-      file_handle = TFile::Open(out_filename, "RECREATE");
+      file_handle = TFile::Open(out_filename.c_str(), "RECREATE");
       tree = new TTree("output", "ATLAS_2014_I1315949 output");
       tree->Branch("Zpt", &br_Zpt, "Zpt/D");
       tree->Branch("ptSumTowards", &br_ptSumTowards, "ptSumTowards/D");
-      tree->Branch("ptSumTransvers", &br_ptSumTransvers, "ptSumTransvers/D");
+      tree->Branch("ptSumTransvers", &br_ptSumTransverse, "ptSumTransvers/D");
       tree->Branch("ptSumAway", &br_ptSumAway, "ptSumAway/D");
       tree->Branch("ptSumTrmin", &br_ptSumTrmin, "ptSumTrmin/D");
       tree->Branch("ptSumTrmax", &br_ptSumTrmax, "ptSumTrmax/D");
@@ -218,7 +218,7 @@ namespace Rivet {
       br_nAway = nAway;
       br_nTrmin = nTrmin;
       br_nTrmax = nTrmax;
-      br_ibin = ibin;
+      br_ibin = i_bin;
       tree->Fill();
     }
 
