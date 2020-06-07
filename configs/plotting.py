@@ -245,11 +245,10 @@ def plot_hist_on_axes_1d(axmain, axratio, h, href=None, default_color="black", d
         artists = axmain.plot(h.xVals(), h.yVals(), marker=marker, markersize=msize, linestyle="none", color=mcolor, markeredgecolor=mcolor)
 
     ## Legend entry
-    if h.annotation("Title") and artists:
-        artists[0].set_label(h.annotation("Title"))
+    if h.annotation("filetag") and artists:
+        artists[0].set_label(h.annotation("filetag"))
 
     ## Ratio
-    ratioartists = None
     if href and h is not href:
         # TODO: exclude and specify order via RatioIndex
         # assert h.same_binning_as(href)

@@ -78,18 +78,25 @@ def plot(inputs, options=None):
                         hist = data[key]
                     except KeyError:
                         print(key,"is missing in data, ignored")
-                        continue
+                        break
 
                 hist.setAnnotation('ratioref', True)
             else:
-                hist = data[key]
+                try:
+                    hist = data[key]
+                except KeyError:
+                    print("{} does not have {}".format(in_file[0], key))
+                    break
 
-            hist.setAnnotation('Title', in_file[0])
+            hist.setAnnotation('filetag', in_file[0])
             if type(hist) == yoda.core.Profile1D:
                 hist = hist.mkScatter()
             hist.setAnnotation('nEvents', get_sum(hist))
 
             hists_list.append(hist)
+
+        if len(hists_list) < 2:
+            continue
 
         title = key.split('/')[-1]
         plotkeys['xlabel'] = options[title][0] if title in options else title
