@@ -13,11 +13,11 @@
 namespace Rivet {
 
 
-  class ATLAS_2014_I1315949 : public Analysis {
+  class ATLAS_2020_I1315949 : public Analysis {
   public:
 
     /// Constructor
-    DEFAULT_RIVET_ANALYSIS_CTOR(ATLAS_2014_I1315949);
+    DEFAULT_RIVET_ANALYSIS_CTOR(ATLAS_2020_I1315949);
 
     void init() {
 
@@ -282,6 +282,6 @@ namespace Rivet {
   };
 
 
-  DECLARE_RIVET_PLUGIN(ATLAS_2014_I1315949);
+  DECLARE_RIVET_PLUGIN(ATLAS_2020_I1315949);
 
 }
