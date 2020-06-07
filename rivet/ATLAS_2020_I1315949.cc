@@ -85,12 +85,14 @@ namespace Rivet {
       tree->Branch("nTrmax", &br_nTrmax, "nTrmax/D");
 
       tree->Branch("ibin", &br_ibin, "ibin/L");
+      nEvts = nEvtsSelected = 0;
     }
 
 
     /// Perform the per-event analysis
     void analyze(const Event& event) {
 
+      nEvts ++;
       const ZFinder& zfinder = apply<ZFinder>(event, "ZFinder");
 
       if (zfinder.bosons().size() != 1) vetoEvent;
@@ -99,6 +101,8 @@ namespace Rivet {
       double  Zphi  = zfinder.bosons()[0].momentum().phi(MINUSPI_PLUSPI);
       double  Zmass = zfinder.bosons()[0].momentum().mass()/GeV;
       if(Zmass < 66. || Zmass > 116.) vetoEvent;
+
+      nEvtsSelected ++;
 
       // Initialise counters for Nch and sumPt for all regions
       int nTowards(0), nTransverse(0), nLeft(0), nRight(0), nTrmin(0), nTrmax(0), nAway(0);
@@ -224,6 +228,10 @@ namespace Rivet {
 
 
     /// Normalise histograms etc., after the run
+    // the finalize and analyze function will be called
+    // serval times depending on the number of variations in the HEPMC data
+    // the root file only saves the first one.
+    // Hopefully it is the baseline.
     void finalize() {
       for(int i_reg = 0; i_reg < 4; i_reg++) {
         for(int i_bin = 0; i_bin < 6; i_bin++) {
@@ -231,9 +239,15 @@ namespace Rivet {
           normalize( _h_Nchg_1D[ i_reg][i_bin] );
         }
       }
-      file_handle->cd();
-      tree->Write();
-      file_handle->Close();
+      // cout << "Total Events: " << nEvts << ". Selected: " << nEvtsSelected << endl;
+      if (file_handle && tree) {
+        file_handle->cd();
+        tree->Write();
+        file_handle->Close();
+        tree = nullptr;
+        file_handle = nullptr;
+      }
+      // cout << "END of Finalized" << endl;
     }
 
 
@@ -278,7 +292,8 @@ namespace Rivet {
     double br_nTrmax;
     int br_ibin;
 
-    
+    long int nEvts;
+    long int nEvtsSelected;
   };
 
 
