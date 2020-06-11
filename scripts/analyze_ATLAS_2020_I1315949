@@ -1,0 +1,40 @@
+#!/usr/bin/env python
+import ROOT
+from root_numpy import root2array
+from root_numpy import fill_hist
+import numpy as np
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Analyze the ROOT ntuple produced by analysis ATLAS-2020-I1315949")
+    add_arg = parser.add_argument
+    add_arg("filename", help='input ROOT file')
+    add_arg("outname", help='prefix of output filename')
+    args = parser.parse_args()
+
+    array = root2array(args.filename) 
+    outfile = ROOT.TFile.Open(args.outname+".root", "RECREATE")
+
+    def study_ncharge(tr_name, area_factor=1.):
+        # tr_name = 'nTransverse'
+        zpT = np.expand_dims(array['Zpt'], axis=1)
+        nChargeTrMax = np.expand_dims(array[tr_name], axis=1)
+        
+        h_zpt_nChargeTr = ROOT.TH2D("ZpT_nCharge_{}".format(tr_name[1:]),
+                            "ZpT vs nCharge at {};ZpT [GeV]; Charge Density".format(tr_name[1:]), 
+                            10, 0, 100, 25, 0, 25)
+        fill_hist(h_zpt_nChargeTr, np.concatenate([zpT, nChargeTrMax], axis=1))
+
+        mask = (array['Zpt'] > 5) &  (array['Zpt'] < 10)
+        h_nChargeTr_bin2 = ROOT.TH1D("nCharge_{}_bin2".format(tr_name[1:]), 
+                            "Charge density at ZpT of [5, 10] GeV;"
+                            "charge density at {}; Events / 0.1".format(tr_name[1:]),
+                            50, 0, 5)
+        area = 5.*2./3.*np.pi * area_factor
+        fill_hist(h_nChargeTr_bin2, array[tr_name][mask]/area)
+
+        h_nChargeTr_bin2.Write()
+        h_zpt_nChargeTr.Write()
+
+    study_ncharge('nTrmax', 0.5)
+    outfile.Close()

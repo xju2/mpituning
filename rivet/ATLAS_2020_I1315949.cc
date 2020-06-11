@@ -78,13 +78,13 @@ namespace Rivet {
       tree->Branch("ptSumTrmin", &br_ptSumTrmin, "ptSumTrmin/D");
       tree->Branch("ptSumTrmax", &br_ptSumTrmax, "ptSumTrmax/D");
 
-      tree->Branch("nTowards", &br_nTowards, "nTowards/D");
-      tree->Branch("nTransverse", &br_nTransverse, "nTransverse/D");
-      tree->Branch("nAway", &br_nAway, "nAway/D");
-      tree->Branch("nTrmin", &br_nTrmin, "nTrmin/D");
-      tree->Branch("nTrmax", &br_nTrmax, "nTrmax/D");
+      tree->Branch("nTowards", &br_nTowards, "nTowards/I");
+      tree->Branch("nTransverse", &br_nTransverse, "nTransverse/I");
+      tree->Branch("nAway", &br_nAway, "nAway/I");
+      tree->Branch("nTrmin", &br_nTrmin, "nTrmin/I");
+      tree->Branch("nTrmax", &br_nTrmax, "nTrmax/I");
 
-      tree->Branch("ibin", &br_ibin, "ibin/L");
+      tree->Branch("ibin", &br_ibin, "ibin/I");
       nEvts = nEvtsSelected = 0;
     }
 
@@ -220,6 +220,7 @@ namespace Rivet {
       br_ptSumTrmax = ptSumTrmax;
       br_nTowards = nTowards;
       br_nAway = nAway;
+      br_nTransverse = nTransverse;
       br_nTrmin = nTrmin;
       br_nTrmax = nTrmax;
       br_ibin = i_bin;
@@ -285,11 +286,11 @@ namespace Rivet {
     double br_ptSumAway;
     double br_ptSumTrmin;
     double br_ptSumTrmax;
-    double br_nTowards;
-    double br_nTransverse;
-    double br_nAway;
-    double br_nTrmin;
-    double br_nTrmax;
+    int br_nTowards;
+    int br_nTransverse;
+    int br_nAway;
+    int br_nTrmin;
+    int br_nTrmax;
     int br_ibin;
 
     long int nEvts;

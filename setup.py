@@ -32,5 +32,6 @@ setup(
         'scripts/compare_yoda_files',
         'scripts/normalize_yoda',
         'scripts/create_diy_configs',
+        'scripts/analyze_ATLAS_2020_I1315949',
     ],
 )
